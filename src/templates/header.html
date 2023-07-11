@@ -1,0 +1,124 @@
+<template>
+  <style>
+    header {
+      background: var(--color-primary-dark);
+      color: var(--color-primary-light);
+      overflow: hidden;
+      padding: 20px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 120%;
+      margin: 0;
+    }
+
+    nav {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    ul {
+      display: flex;
+      gap: 0 1em;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    a:hover {
+      color: var(--color-text-primary);
+    }
+
+    .menu-button {
+      appearance: none;
+      -webkit-appearance: none;
+      background: transparent;
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+      display: none;
+      font-size: 0;
+      height: 40px;
+      margin: 0;
+      outline: 0;
+      padding: 0;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        background: #000000cc;
+        inset: 0;
+        opacity: 0;
+        overflow-y: scroll;
+        position: fixed;
+        transform: scale(0);
+        transition: transform 0s 0.4s, opacity 0.2s 0.2s;
+        z-index: 1111;
+      }
+
+      nav.active {
+        opacity: 1;
+        transform: scale(1);
+        transition: transform 0s, opacity 0.2s;
+      }
+
+      ul {
+        background: var(--color-primary-dark);
+        bottom: 0;
+        flex-direction: column;
+        left: 30%;
+        padding: 40px 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        transition: transform 0.4s;
+      }
+
+      .active > ul {
+        transform: translateX(0);
+      }
+
+      li {
+        border-bottom: var(--color-divider) solid 1px;
+        padding: 1em;
+      }
+
+      .menu-button {
+        display: block;
+      }
+    }
+  </style>
+
+  <header>
+    <h1>Header</h1>
+
+    <nav>
+      <ul>
+        <li><a href="/nested/">nested</a></li>
+        <li><button class="dialog-button">Dialog</button></li>
+      </ul>
+    </nav>
+
+    <button class="menu-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+        <path
+          stroke="currentColor"
+          stroke-width="2"
+          d="M10 13H30 M10 20H30 M10 27H30"
+        />
+      </svg>
+    </button>
+  </header>
+</template>
