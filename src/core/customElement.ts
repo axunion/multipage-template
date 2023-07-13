@@ -18,16 +18,16 @@ export const defineCustomElement = ({
   const parser = new DOMParser();
   const doc = parser.parseFromString(template, 'text/html');
   const el = doc.querySelector('template');
-  const content = el?.content;
 
-  if (content) {
-    const node = content.cloneNode(true);
+  if (el) {
+    const content = el.content;
 
     window.customElements.define(
       tag,
       class extends HTMLElement {
         constructor() {
           super();
+          const node = content.cloneNode(true);
           this.attachShadow({ mode: 'open' }).appendChild(node);
         }
 
