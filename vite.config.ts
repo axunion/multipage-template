@@ -22,6 +22,9 @@ export default defineConfig({
   root: 'src/pages',
   base: '',
   publicDir: '../../public',
+  resolve: {
+    alias: [{ find: '@', replacement: resolve(__dirname, 'src') }],
+  },
   build: {
     target: 'es2015',
     outDir: '../../dist',

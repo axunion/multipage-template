@@ -40,8 +40,14 @@ html {
   background: var(--color-primary-dark);
   color: var(--color-text);
   color-scheme: light dark;
-  font: 16px/1.5 -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
-    'Noto Sans JP', 'Yu Gothic', sans-serif;
+  font:
+    16px/1.5 -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    Helvetica,
+    'Noto Sans JP',
+    'Yu Gothic',
+    sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;

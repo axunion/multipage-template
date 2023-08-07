@@ -15,6 +15,7 @@ export const createState = <T>({
 
   return {
     read: () => state,
+
     update: async (updater: (state: T) => T | Promise<T>) => {
       if (isUpdating) {
         throw new Error('Cannot update state while it is being updated.');
@@ -26,9 +27,11 @@ export const createState = <T>({
       actions.forEach((action) => action({ prev: prevState, state: state }));
       isUpdating = false;
     },
+
     addAction: (action: StateAction<T>) => {
       actions.push(action);
     },
+
     removeAction: (action: StateAction<T>) => {
       const index = actions.indexOf(action);
 
