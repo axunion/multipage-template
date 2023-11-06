@@ -45,8 +45,8 @@ html {
     BlinkMacSystemFont,
     Roboto,
     Helvetica,
-    'Noto Sans JP',
-    'Yu Gothic',
+    "Noto Sans JP",
+    "Yu Gothic",
     sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -59,8 +59,15 @@ body {
   margin: 0;
 }
 
-body.nav-active {
-  overflow: hidden;
+h1 {
+  font-size: 120%;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 #viewport {
@@ -76,4 +83,19 @@ main {
   background: var(--color-background);
   flex: 1 0 auto;
   padding: 20px;
+}
+
+header {
+  background: var(--color-primary);
+  padding: 1em 2em;
+  position: relative;
+}
+
+footer {
+  align-items: center;
+  background: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  min-height: 50vh;
+  overflow: hidden;
 }
